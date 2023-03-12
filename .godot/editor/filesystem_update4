@@ -1,0 +1,5 @@
+res://default_env.tres
+res://TestScene.tscn
+res://addons/gdpeg/gdpeg.gd
+res://addons/gdpeg/plugin.gd
+res://readme.md

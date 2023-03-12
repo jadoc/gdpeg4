@@ -1,0 +1,8 @@
+Thumbs.db
+.import/*
+dev/*
+*.import
+default_env.tres
+icon.png
+project.godot
+TestScene.tscn
