@@ -1,5 +1,6 @@
 Thumbs.db
 .import/*
+.godot/*
 dev/*
 *.import
 default_env.tres
