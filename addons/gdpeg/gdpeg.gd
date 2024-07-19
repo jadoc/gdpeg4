@@ -10,7 +10,7 @@
 
 class_name GDPeg
 
-class PegResult:
+class PegResult extends RefCounted:
 	var accept:bool
 	var position:int
 	var length:int
@@ -23,7 +23,7 @@ class PegResult:
 		self.length = _length
 		self.capture = _capture
 
-class PegTree:
+class PegTree extends RefCounted:
 	func parse( buffer:String, p:int = 0 ) -> PegResult:
 		return self._parse( buffer, p )
 
@@ -314,7 +314,7 @@ static func ahead_accept( _a:PegTree ) -> PegTree:
 static func ahead_not( _a:PegTree ) -> PegTree:
 	return PegAheadNotAccept.new( _a )
 
-class PegGenerator:
+class PegGenerator extends RefCounted:
 	func compile( labels:Dictionary, capture_functions:Dictionary = {} ) -> PegTree:
 		return null
 
@@ -447,7 +447,7 @@ class PegGeneratorEnd extends PegGenerator:
 	func compile( labels:Dictionary, capture_functions:Dictionary = {} ) -> PegTree:
 		return PegEnd.new( )
 
-class PegGeneratorFuncs:
+class PegGeneratorFuncs extends RefCounted:
 	func name( _name:String ):
 		return PegGeneratorName.new( _name )
 	func literal( _literal:Array ):
